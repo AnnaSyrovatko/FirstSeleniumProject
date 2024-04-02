@@ -33,8 +33,40 @@ public class FindElementsTests {
         List<WebElement> elements = driver.findElements(By.tagName("a"));
         System.out.println(elements.size());
 
-
     }
+    @Test
+    public void findElementByLocators(){
+        // id - best strategy but for dynamic id
+        driver.findElement(By.id("city"));
+        // class name
+        driver.findElement(By.className("input-container"));
+        // name By.name()
+        //link text
+        driver.findElement(By.linkText( "Let the car work"));
+        // partial link
+        driver.findElement(By.partialLinkText("work"));
+    }
+    @Test
+    public void findElementByCssSelector(){
+        // tag name = tag name;
+        //id -> #id (css selector)
+        //driver.findElement(By.id("city"));
+        driver.findElement(By.cssSelector("#city"));
+        //class name -> .className
+        driver.findElement(By.cssSelector(".input-container"));
+        // [name='key']
+        driver.findElement(By.cssSelector("[for='city'"));
+        driver.findElement(By.cssSelector("[href='/search'"));
+        //contains -> *
+        driver.findElement(By.cssSelector("[href*='car'"));
+        //starts -> ^=/key
+        driver.findElement(By.cssSelector("[href^='/let'"));
+        //end on -> $
+        driver.findElement(By.cssSelector("[href$='work']"));
+    }
+
+    //xPath - next lesson
+
     @AfterMethod
     public void tearDown(){
         driver.quit();

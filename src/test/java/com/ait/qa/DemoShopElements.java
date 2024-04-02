@@ -21,25 +21,33 @@ public class DemoShopElements {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
-
     @Test
     public void findElementsByTagName(){
 
-        WebElement form = driver.findElement(By.tagName("form")); // The only unique enabled tag
-        System.out.println(form.isDisplayed());
+        WebElement element = driver.findElement(By.tagName("form"));
+        System.out.println(element.isDisplayed());
 
-        List<WebElement> strongList = driver.findElements(By.tagName("strong"));
-        System.out.println(strongList.size());
+        List<WebElement> elements = driver.findElements(By.tagName("strong"));
+        System.out.println(elements.size());
 
         List<WebElement> paragraphs = driver.findElements(By.tagName("p"));
         paragraphs.forEach(x -> System.out.println(x.getText()));
-
-        WebElement element = driver.findElement(By.className("ico-register"));
-        System.out.println(element.getText());
-
-
     }
+    @Test
+    public void findElementByCssSelector(){
 
+        driver.findElement(By.cssSelector("#small-searchterms"));
+        driver.findElement(By.cssSelector("[action='/search']"));
+        driver.findElement(By.cssSelector(".button-1.search-box-button"));
+        driver.findElement(By.cssSelector("input#pollanswers-1"));
+        driver.findElement(By.cssSelector("[for='pollanswers-1']"));
+
+        driver.findElement(By.cssSelector("[href^='/reg']"));
+        driver.findElement(By.cssSelector("[data-productid='16'] .button-2.product-box-add-to-cart-button"));
+        driver.findElement(By.cssSelector("[class$='content-title']"));
+        driver.findElement(By.cssSelector(".top-menu [href*='gift']"));
+        driver.findElement(By.cssSelector(".nivo-prevNav"));
+    }
     @AfterMethod
     public void tearDown(){
         driver.quit();
