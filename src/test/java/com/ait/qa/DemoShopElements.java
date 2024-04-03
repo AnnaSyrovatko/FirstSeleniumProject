@@ -48,6 +48,22 @@ public class DemoShopElements {
         driver.findElement(By.cssSelector(".top-menu [href*='gift']"));
         driver.findElement(By.cssSelector(".nivo-prevNav"));
     }
+    @Test
+    public void findElementByXpath(){
+        driver.findElement(By.xpath("//input[@id='small-searchterms']"));
+        driver.findElement(By.xpath("//*[@action='/search']"));
+        driver.findElement(By.xpath("//*[contains(@class, 'search-box-button')]"));
+        driver.findElement(By.xpath("//*[@id='pollanswers-1']"));
+        driver.findElement(By.xpath("//label[text()='Excellent']"));
+
+        driver.findElement(By.xpath("//*[starts-with(@href,'/reg')]"));
+        driver.findElement(By.xpath("//div[@data-productid='16']//input[@type='button']"));
+        driver.findElement(By.xpath("//*[contains(@class, 'content-title')]"));
+        driver.findElement(By.xpath("//ul[@class='top-menu']//a[contains(.,'Gift')]"));
+        driver.findElement(By.xpath("//*[@class='nivo-prevNav']"));
+
+    }
+
     @AfterMethod
     public void tearDown(){
         driver.quit();

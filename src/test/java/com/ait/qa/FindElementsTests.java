@@ -64,8 +64,31 @@ public class FindElementsTests {
         //end on -> $
         driver.findElement(By.cssSelector("[href$='work']"));
     }
+    @Test
+    public void findElementByXpath(){
+        //xPath //tag|*[@attr='value']
+        driver.findElement(By.xpath("//h1"));
+        // id -> tag[@id='idName']
+        driver.findElement(By.xpath("//*[@id='city']"));
+        // class name -> //*[@class='Name']
+        driver.findElement(By.xpath("//*[@class='input-container']"));
+        // contains -> //*contains[@attr,'value']
+        driver.findElement(By.xpath("//*[contains(@href,'car')]"));
+        driver.findElement(By.xpath("//*[starts-with(@href,'/let')]"));
 
-    //xPath - next lesson
+
+        driver.findElement(By.xpath("//span[text()=' Never mistaken for anything else ']"));
+        driver.findElement(By.xpath("//span[.=' Never mistaken for anything else ']"));
+        driver.findElement(By.xpath("//span[contains(.,'mistakes')]"));
+        driver.findElement(By.xpath("//span[contains(text(),'mistakes')]"));
+        // //input[@id='username']/..
+        // //div/a - child
+        // //div//a  - any level child
+
+        //tag1[.tag2[@attr='value']]
+        //*[@id='firstName' or @name='lastName']
+        //*[@id='firstName' and @name='lastName']
+    }
 
     @AfterMethod
     public void tearDown(){
