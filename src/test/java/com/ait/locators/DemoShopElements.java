@@ -1,4 +1,4 @@
-package com.ait.qa;
+package com.ait.locators;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
