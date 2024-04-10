@@ -1,4 +1,4 @@
-package com.ait.shop;
+package com.demoshop.models;
 
 public class User {
     private String firstName;
@@ -7,25 +7,12 @@ public class User {
     private String password;
     private String confirmPassword;
 
-    public String getFirstName() {
-        return firstName;
-    }
     public User setFirstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
-    public String getLastName() {
-        return lastName;
-    }
     public User setLastName(String lastName) {
         this.lastName = lastName;
-        return this;
-    }
-    public String getConfirmPassword() {
-        return confirmPassword;
-    }
-    public User setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
         return this;
     }
     public User setEmail(String email){
@@ -36,11 +23,24 @@ public class User {
         this.password = password;
         return this;
     }
+    public User setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+        return this;
+    }
+    public String getFirstName() {
+        return firstName;
+    }
+    public String getLastName() {
+        return lastName;
+    }
     public String getEmail() {
             return email;
     }
     public String getPassword(){
             return password;
+    }
+    public String getConfirmPassword() {
+        return confirmPassword;
     }
 
 }
