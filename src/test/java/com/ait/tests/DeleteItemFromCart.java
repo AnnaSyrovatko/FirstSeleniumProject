@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class DeleteItemFromCart extends TestBase{
     @BeforeMethod
     public void ensurePrecondition(){
-        if(app.getUser().isAccountNamePresent()){
+        if(!app.getUser().isLoginLinkPresent()){
             app.getUser().clickOnLogOutButton();
         }
         app.getUser().clickOnLoginLink();

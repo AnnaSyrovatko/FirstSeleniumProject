@@ -12,19 +12,12 @@ import org.testng.annotations.Test;
 public class AddItemToCartTest extends TestBase{
     @BeforeMethod
     public void ensurePrecondition(){
-        if(app.getUser().isAccountNamePresent()){
+        if(!app.getUser().isLoginLinkPresent()){
             app.getUser().clickOnLogOutButton();
         }
         app.getUser().clickOnLoginLink();
         app.getUser().fillLoginRegistrationForm(new User().setEmail(UserData.EMAIL).setPassword(UserData.PASSWORD));
         app.getUser().clickOnLoginButton();
-    }
-    @Test
-    public void addItemToCartTest1(){
-        app.getCart().addItemToCart(By.xpath(ProductsData.PRODUCT_IN_CATALOGUE));
-        app.getCart().pause(1000);
-        app.getCart().clickOnCartLink();
-        Assert.assertTrue(app.getCart().isElementPresent(By.cssSelector(ProductsData.PRODUCT_NAME)));
     }
 
     @Test

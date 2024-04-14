@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class LoginTest extends TestBase{
     @BeforeMethod
     public void ensurePrecondition(){ // rewrite precondition - too time-consuming element search
-        if(app.getUser().isAccountNamePresent()){
+        if(!app.getUser().isLoginLinkPresent()){
             app.getUser().clickOnLogOutButton();
         }
     }
