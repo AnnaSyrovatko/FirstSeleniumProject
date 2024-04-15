@@ -1,5 +1,6 @@
 package com.ait.tests;
 
+import com.demoshop.data.ProductsData;
 import com.demoshop.data.UserData;
 import com.demoshop.models.User;
 import org.openqa.selenium.By;
@@ -17,7 +18,7 @@ public class DeleteItemFromCart extends TestBase{
         app.getUser().fillLoginRegistrationForm(new User().setEmail(UserData.EMAIL).setPassword(UserData.PASSWORD));
         app.getUser().clickOnLoginButton();
 
-        app.getCart().addItemToCart(By.xpath("//input[contains(@onclick,'31')]"));
+        app.getCart().addItemToCart(By.xpath(ProductsData.PRODUCT_IN_CATALOGUE));
         app.getCart().pause(1000);
         app.getCart().clickOnCartLink();
     }
